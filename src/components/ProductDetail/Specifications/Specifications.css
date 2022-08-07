@@ -1,0 +1,8 @@
+.specificationsUl li p{
+    display: inline-block;
+    margin: 5px 0px;
+}
+.specificationsUl li p:nth-child(1){
+    min-width: 170px;
+    color: grey;
+}

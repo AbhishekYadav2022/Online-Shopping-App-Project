@@ -1,0 +1,14 @@
+.links{
+    color: #007185;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 2px 4px 2px 4px;
+    margin: 10px 0px 0px 25px;
+}
+.links:hover{
+    color: #007185;
+}
+.links.active{
+    color: black;
+    border-bottom: 2px solid #c45500;
+}

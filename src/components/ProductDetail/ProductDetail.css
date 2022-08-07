@@ -1,0 +1,165 @@
+.productDetail {
+    min-height: 30vh;
+    border: 1px solid rgb(209, 209, 209);
+    padding: 10px;
+}
+
+.product {
+    display: flex;
+}
+
+.productImage {
+    border: 1px solid rgb(209, 209, 209);
+    height: 90vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(251, 251, 251);
+    /* Fixing Position */
+    position: sticky;
+    top: 10px;
+}
+
+.productImage img {
+    height: 80%;
+}
+
+.productImage .productBtns {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productImage button {
+    width: 45%;
+    border: none;
+    background-color: orange;
+    padding: 15px;
+    margin: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.productImage .addToCart {
+    background-color: orange;
+}
+
+.productImage .buyNow {
+    background-color: rgb(255, 83, 21);
+}
+
+.productDescription {
+    height: auto;
+    width: 65vw;
+    padding-left: 20px;
+}
+
+.productDescription h2,
+p,
+h4 {
+    margin: 15px 5px;
+}
+
+/* Product Description  */
+.productTitle {
+    font-size: 1.2rem;
+    color: rgb(26, 26, 26);
+    font-weight: 400;
+}
+
+.productRatingAndReview {
+    color: grey;
+    font-weight: 500;
+}
+.productRatingAndReview .productRating {
+    background-color: green;
+    color: white;
+    font-size: .9rem;
+    padding: 2px 7px;
+    border-radius: 3px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+.starIcon{
+    height: 12px;
+    margin-left: 3px;
+}
+
+.productPrice {
+    font-size: 1.7rem;
+}
+
+.newPrice {
+    font-weight: 500;
+}
+
+.oldPrice {
+    font-size: 1.1rem;
+    color: grey;
+}
+
+.off {
+    font-size: 1.1rem;
+    color: green;
+}
+
+.productPrice img {
+    cursor: pointer;
+}
+
+.offersHeading {
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+
+.offersHeading ul li {
+    font-weight: 200;
+    margin: 10px 5px;
+    font-size: 1.05rem;
+}
+.offers li{
+    /* Adjusting list style image */
+    list-style: none;
+    padding: 0px 30px;
+    background-image: url(./priceTag.png);
+    background-repeat: no-repeat;
+    background-position: left-center;
+    background-size: 20px;
+}
+
+/* Product Imformation */
+.productInforamtion {}
+
+.productInformationByCategory {
+    display: flex;
+}
+
+.productInformationByCategory h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    width: 110px;
+    padding-right: 10px;
+    color: #878787;
+    float: left;
+}
+.productInformationByCategory p, ul li{
+    font-size: 1rem;
+    padding-right: 10px;
+}
+.productInformationByCategory ul{
+    margin-top: 15px;
+}
+
+/* Cart Icon Adjust */
+.iconIcontainer{
+    height: 10px;
+}

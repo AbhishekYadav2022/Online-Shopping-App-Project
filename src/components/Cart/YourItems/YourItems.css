@@ -1,0 +1,27 @@
+.cartLinks a {
+    margin: 20px;
+    padding: 5px;
+    color: #007185;
+}
+
+.cartLinks a.active {
+    border-bottom: 3px solid #d98c00;
+    color: black;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .cartLinks a {
+        margin: 0px;
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .cartLinks a.active {
+        margin: 0px;
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+}

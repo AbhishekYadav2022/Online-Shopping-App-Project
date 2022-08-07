@@ -1,0 +1,21 @@
+.wishlistLink {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #007185;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    
+}
+
+.wishlistLink:hover {
+    border-top: 1px solid #C7511F;
+    color: #C7511F;
+    background-color: white;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+.wishlistLink.active {
+    font-weight: 700;
+    color: #C7511F;
+}
