@@ -14,6 +14,9 @@ import Orders from "./components/YourOrders/Orders/Orders";
 import NotYetShipped from "./components/YourOrders/NotYetShipped/NotYetShipped";
 import CancelledOrders from "./components/YourOrders/CancelledOrders/CancelledOrders";
 import YourWishlist from "./components/YourWishlist/YourWishlist";
+import YourLists from "./components/YourWishlist/YourLists/YourLists";
+import YourIdeaLists from "./components/YourWishlist/YourIdeaLists/YourIdeaLists";
+import YourFriends from "./components/YourWishlist/YourFriends/YourFriends";
 
 export default class App extends Component {
   render() {
@@ -23,20 +26,25 @@ export default class App extends Component {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="productdetails" element={<ProductDetails />} />
-          <Route path="account" element={<YourAccount/>} />
-          <Route path="orders" element={<YourOrders/>}>
-            <Route path="ordered-items" element={<Orders/>}/>
-            <Route path="buyagain" element={<BuyAgain/>}/>
-            <Route path="not-yet-shipped" element={<NotYetShipped/>}/>
-            <Route path="cancelled-orders" element={<CancelledOrders/>}/>
+          <Route path="account" element={<YourAccount />} />
+          <Route path="orders" element={<YourOrders />}>
+            <Route path="ordered-items" element={<Orders />} />
+            <Route path="buyagain" element={<BuyAgain />} />
+            <Route path="not-yet-shipped" element={<NotYetShipped />} />
+            <Route path="cancelled-orders" element={<CancelledOrders />} />
           </Route>
           <Route path="cart" element={<Cart />}>
+            <Route index element={<BuyAgain />}></Route>
             <Route path="savedforlater" element={<SavedForLater />} />
             <Route path="buyagain" element={<BuyAgain />} />
           </Route>
-          <Route path="wishlist" element={<YourWishlist/>}></Route>
+          <Route path="wishlist" element={<YourWishlist />}>
+            <Route path="your-lists" element={<YourLists/>}/>
+            <Route path="your-idea-lists" element={<YourIdeaLists/>}/>
+            <Route path="your-friends" element={<YourFriends/>}/>
+          </Route>
         </Routes>
-        <Footer/>
+        <Footer />
       </>
     );
   }

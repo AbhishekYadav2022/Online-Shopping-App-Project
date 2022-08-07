@@ -1,21 +1,25 @@
 .wishlistLink {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #007185;
-    padding: 8px 15px;
-    border: 1px solid transparent;
-    
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #007185;
+  padding: 8px 15px;
+  border: 1px solid transparent;
+  margin-bottom: -1px;
+}
+.wishlistLink:nth-child(1) {
+  border-left: 1px solid lightgray;
 }
 
 .wishlistLink:hover {
-    border-top: 1px solid #C7511F;
-    color: #C7511F;
-    background-color: white;
-    border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray;
+  color: #c7511f;
+  border-top: 1px solid #c7511f;
 }
 
 .wishlistLink.active {
-    font-weight: 700;
-    color: #C7511F;
+  border-top: 1px solid #c7511f;
+  background-color: white;
+  font-weight: 700;
+  color: #c7511f;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
 }

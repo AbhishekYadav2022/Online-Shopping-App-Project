@@ -24,11 +24,11 @@ const Links = styled.div`
 `
 
 const HR = styled.hr`
-  margin-top: 5px;
+  margin-top: 7px;
   padding: 0;
 `
 const NestedContainer = styled.div`
-  /* margin: 10px; */
+  margin: 15px 0px;
 `
 export default class YourItems extends Component {
   render() {
