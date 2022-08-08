@@ -6,6 +6,8 @@ import listIcon from "./assets/list.svg";
 import gridIcon from "./assets/grid.svg";
 import "./YourLists.css";
 import YourListItems from "./YourListItems/YourListItems";
+import { useSearchParams } from "react-router-dom";
+import YourListItems_DisplayList from "./YourListItems_DisplayList/YourListItems_DisplayList";
 
 const Wrapper = styled.div`
   display: flex;
@@ -122,55 +124,59 @@ const Sort = styled.p`
   margin: 15px 20px;
 `;
 const ListConentWrapper = styled.div`
-  border: 2px solid rebeccapurple;
-  margin: 0px 5px;
-`
-export default class YourLists extends Component {
-  render() {
-    return (
-      <Wrapper>
-        <WishLists>
-          <ListName>Shopping List</ListName>
-        </WishLists>
-        <ListItemContainer>
-          <Nav>
-            <Title>Shopping List</Title>
-            <Actions>
-              <Share>
-                <ShareIconContainer>
-                  <ShareIcon src={shareIcon} />
-                </ShareIconContainer>
-                <ShareText>Send list to others</ShareText>
-              </Share>
-              <More>
-                <MoreIconContainer>
-                  <MoreIcon src={moreIcon} />
-                </MoreIconContainer>
-                <MoreText>More</MoreText>
-              </More>
-            </Actions>
-          </Nav>
-          <ActionBar>
-            <DispalyIcons>
-              <DisplayIconContainer>
-                <DisplayIcon src={gridIcon} />
-              </DisplayIconContainer>
-              <ListIconContainer>
-                <DisplayIcon src={listIcon} />
-              </ListIconContainer>
-            </DispalyIcons>
-            <SearchAndSort>
-              <SearchContainer>
-                <Search className="listSearch" placeholder="Search this list" />
-              </SearchContainer>
-              <Sort>Filter & Sort</Sort>
-            </SearchAndSort>
-          </ActionBar>
-          <ListConentWrapper>
-            <YourListItems/>
-          </ListConentWrapper>
-        </ListItemContainer>
-      </Wrapper>
-    );
-  }
-}
+  margin: 0px 5px 5px 5px;
+`;
+
+const YourLists = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const showListView = searchParams.get("filter") === "list";
+  return (
+    <Wrapper>
+      <WishLists>
+        <ListName>Shopping List</ListName>
+      </WishLists>
+      <ListItemContainer>
+        <Nav>
+          <Title>Shopping List</Title>
+          <Actions>
+            <Share>
+              <ShareIconContainer>
+                <ShareIcon src={shareIcon} />
+              </ShareIconContainer>
+              <ShareText>Send list to others</ShareText>
+            </Share>
+            <More>
+              <MoreIconContainer>
+                <MoreIcon src={moreIcon} />
+              </MoreIconContainer>
+              <MoreText>More</MoreText>
+            </More>
+          </Actions>
+        </Nav>
+        <ActionBar>
+          <DispalyIcons>
+            <DisplayIconContainer>
+              <DisplayIcon onClick={() => setSearchParams({})} src={gridIcon} />
+            </DisplayIconContainer>
+            <ListIconContainer>
+              <DisplayIcon
+                onClick={() => setSearchParams({ filter: "list" })}
+                src={listIcon}
+              />
+            </ListIconContainer>
+          </DispalyIcons>
+          <SearchAndSort>
+            <SearchContainer>
+              <Search className="listSearch" placeholder="Search this list" />
+            </SearchContainer>
+            <Sort>Filter & Sort</Sort>
+          </SearchAndSort>
+        </ActionBar>
+        <ListConentWrapper>
+          {showListView ? <YourListItems_DisplayList /> : <YourListItems />}
+        </ListConentWrapper>
+      </ListItemContainer>
+    </Wrapper>
+  );
+};
+export default YourLists;
