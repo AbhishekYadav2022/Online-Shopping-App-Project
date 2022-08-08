@@ -4,7 +4,8 @@ import shareIcon from "./assets/share.svg";
 import moreIcon from "./assets/threedot2.png";
 import listIcon from "./assets/list.svg";
 import gridIcon from "./assets/grid.svg";
-import "./YourLists.css"
+import "./YourLists.css";
+import YourListItems from "./YourListItems/YourListItems";
 
 const Wrapper = styled.div`
   display: flex;
@@ -92,8 +93,10 @@ const DispalyIcons = styled.div`
   display: flex;
 `;
 const DisplayIconContainer = styled.div`
-  width: 20px;
+  width: 24.5px;
   margin: 0px 5px;
+  border-bottom: 2px solid #c7511f;
+  padding: 0px 2px 5px 2px;
 `;
 const ListIconContainer = styled.div`
   width: 15.5px;
@@ -109,7 +112,7 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 0;
-`
+`;
 const Search = styled.input`
   font-size: 0.9rem;
   padding: 2px 10px;
@@ -118,7 +121,10 @@ const Sort = styled.p`
   font-size: 0.9rem;
   margin: 15px 20px;
 `;
-
+const ListConentWrapper = styled.div`
+  border: 2px solid rebeccapurple;
+  margin: 0px 5px;
+`
 export default class YourLists extends Component {
   render() {
     return (
@@ -140,7 +146,7 @@ export default class YourLists extends Component {
                 <MoreIconContainer>
                   <MoreIcon src={moreIcon} />
                 </MoreIconContainer>
-                <MoreText>Send list to others</MoreText>
+                <MoreText>More</MoreText>
               </More>
             </Actions>
           </Nav>
@@ -155,11 +161,14 @@ export default class YourLists extends Component {
             </DispalyIcons>
             <SearchAndSort>
               <SearchContainer>
-                <Search className="listSearch" placeholder="Search this list"/>
+                <Search className="listSearch" placeholder="Search this list" />
               </SearchContainer>
               <Sort>Filter & Sort</Sort>
             </SearchAndSort>
           </ActionBar>
+          <ListConentWrapper>
+            <YourListItems/>
+          </ListConentWrapper>
         </ListItemContainer>
       </Wrapper>
     );
