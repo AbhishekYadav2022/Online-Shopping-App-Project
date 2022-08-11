@@ -4,7 +4,6 @@ import shareIcon from "./assets/share.svg";
 import moreIcon from "./assets/threedot2.png";
 import listIcon from "./assets/list.svg";
 import gridIcon from "./assets/grid.svg";
-import "./YourLists.css";
 import YourListItems from "./YourListItems/YourListItems";
 import { useSearchParams } from "react-router-dom";
 import YourListItems_DisplayList from "./YourListItems_DisplayList/YourListItems_DisplayList";
@@ -94,17 +93,22 @@ const ActionBar = styled.div`
 const DispalyIcons = styled.div`
   display: flex;
 `;
-const DisplayIconContainer = styled.div`
+const DisplayListIconContainer = styled.div`
   width: 24.5px;
   margin: 0px 5px;
-  border-bottom: 2px solid #c7511f;
   padding: 0px 2px 5px 2px;
-`;
-const ListIconContainer = styled.div`
-  width: 15.5px;
+  width: 19.5px;
   margin: 0px 5px;
 `;
-const DisplayIcon = styled.img`
+const DisplayGridIconContainer = styled.div`
+  width: 24.5px;
+  margin: 0px 5px;
+  padding: 0px 2px 5px 2px;
+`;
+const DisplayListIcon = styled.img`
+  width: 100%;
+`;
+const DisplayGridIcon = styled.img`
   width: 100%;
 `;
 const SearchAndSort = styled.div`
@@ -118,6 +122,9 @@ const SearchContainer = styled.div`
 const Search = styled.input`
   font-size: 0.9rem;
   padding: 2px 10px;
+  &:focus {
+    width: 240px;
+  }
 `;
 const Sort = styled.p`
   font-size: 0.9rem;
@@ -130,6 +137,14 @@ const ListConentWrapper = styled.div`
 const YourLists = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const showListView = searchParams.get("filter") === "list";
+  let borderColor = showListView ? "#c7511f" : "white";
+  borderColor = !showListView ? "white" : "#c7511f";
+  const myStyle = {
+    borderBottom: "2px solid red",
+  }
+  
+  console.log(borderColor)
+  console.log(myStyle)
   return (
     <Wrapper>
       <WishLists>
@@ -155,15 +170,18 @@ const YourLists = () => {
         </Nav>
         <ActionBar>
           <DispalyIcons>
-            <DisplayIconContainer>
-              <DisplayIcon onClick={() => setSearchParams({})} src={gridIcon} />
-            </DisplayIconContainer>
-            <ListIconContainer>
-              <DisplayIcon
+            <DisplayGridIconContainer style={myStyle}>
+              <DisplayGridIcon
+                onClick={() => setSearchParams({})}
+                src={gridIcon}
+              />
+            </DisplayGridIconContainer>
+            <DisplayListIconContainer style={myStyle}>
+              <DisplayListIcon
                 onClick={() => setSearchParams({ filter: "list" })}
                 src={listIcon}
               />
-            </ListIconContainer>
+            </DisplayListIconContainer>
           </DispalyIcons>
           <SearchAndSort>
             <SearchContainer>

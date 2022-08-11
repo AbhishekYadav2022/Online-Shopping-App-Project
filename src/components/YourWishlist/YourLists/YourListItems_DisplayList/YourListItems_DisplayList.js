@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { ListItemSeed } from "../YourListItems/YourListItemsSeed";
-import threeDots from "../assets/threedot.svg";
-import Draggable from "react-draggable";
+import reorder from "../../../../images/reorder3.svg";
+const isAdded = true;
+let Act = isAdded === true ? "Edit" : "Add"; 
 
 const ContentWrapper = styled.div``;
 const Card = styled.div`
-  background-color: rgba(0, 0, 0, 0.024);
-  margin: 3px;
+  margin: 0px;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid white;
   width: 100%;
   position: relative;
   display: flex;
   padding: 20px 0px;
+  &:hover {
+      border-color: black;
+      border-top: 1px solid black;
+      box-shadow: 0px 5px 5px lightgrey;
+  }
 `;
 const Action = styled.div`
   display: flex;
@@ -21,7 +28,7 @@ const Action = styled.div`
   width: 100px;
 `;
 const DragIconContainer = styled.div`
-  height: 17px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,6 +117,13 @@ const MoveBtn = styled(Button)`
   margin: 2px;
 `;
 const DeleteBtn = styled(MoveBtn)``;
+const AddComment = styled(Date)`
+  color: #007185; 
+  cursor: pointer;
+  &:hover {
+    color: orangered;
+  }
+`
 const QuickView = styled(Button)`
   margin: 0px 20px;
   border-radius: 12px;
@@ -128,37 +142,36 @@ const QuickView = styled(Button)`
 `;
 
 const ListItem = ListItemSeed.map((abc) => (
-  <Draggable>
-    <Card>
-      <Action>
-        <DragIconContainer>
-          <Icon src={threeDots} />
-        </DragIconContainer>
-      </Action>
-      <ImageContainer>
-        <ProductImage
-          className="listProductImage"
-          title={abc.title}
-          src={abc.image}
-        />
-      </ImageContainer>
-      <Desc>
-        <Name>{abc.name}</Name>
-        <Author>{abc.author}</Author>
-        <Price>{abc.price}</Price>
-      </Desc>
-      <Comment></Comment>
-      <Buttons>
-        <Date>{abc.date}</Date>
-        <AddToCart>Add to Cart</AddToCart>
-        <MoveAndDeleteBtns>
-          <MoveBtn>Move</MoveBtn>
-          <DeleteBtn>Delete</DeleteBtn>
-        </MoveAndDeleteBtns>
-      </Buttons>
-      <QuickView className="quickView">Quick View</QuickView>
-    </Card>
-  </Draggable>
+  <Card>
+    <Action>
+      <DragIconContainer>
+        <Icon src={reorder} />
+      </DragIconContainer>
+    </Action>
+    <ImageContainer>
+      <ProductImage
+        className="listProductImage"
+        title={abc.title}
+        src={abc.image}
+      />
+    </ImageContainer>
+    <Desc>
+      <Name>{abc.name}</Name>
+      <Author>{abc.author}</Author>
+      <Price>{abc.price}</Price>
+    </Desc>
+    <Comment></Comment>
+    <Buttons>
+      <Date>{abc.date}</Date>
+      <AddToCart>Add to Cart</AddToCart>
+      <MoveAndDeleteBtns>
+        <MoveBtn>Move</MoveBtn>
+        <DeleteBtn>Delete</DeleteBtn>
+      </MoveAndDeleteBtns>
+      <AddComment>{Act} comment, quantity & priority</AddComment>
+    </Buttons>
+    <QuickView className="quickView">Quick View</QuickView>
+  </Card>
 ));
 
 export default class YourListItems_DisplayList extends Component {

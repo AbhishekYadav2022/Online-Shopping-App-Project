@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { ListItemSeed } from "./YourListItemsSeed";
 import threeDots from "../assets/threedot.svg";
-import Draggable from "react-draggable";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -87,7 +86,6 @@ const QuickView = styled(Button)`
 `;
 
 const ListItem = ListItemSeed.map((abc) => (
-  <Draggable>
     <Card>
       <Action>
         <IconContainer>
@@ -109,7 +107,6 @@ const ListItem = ListItemSeed.map((abc) => (
       </Buttons>
       <QuickView className="quickView">Quick View</QuickView>
     </Card>
-  </Draggable>
 ));
 
 export default class YourListItems extends Component {
