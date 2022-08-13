@@ -17,6 +17,8 @@ import YourWishlist from "./components/YourWishlist/YourWishlist";
 import YourLists from "./components/YourWishlist/YourLists/YourLists";
 import YourIdeaLists from "./components/YourWishlist/YourIdeaLists/YourIdeaLists";
 import YourFriends from "./components/YourWishlist/YourFriends/YourFriends";
+import Modal from "./components/Popups/Modal";
+import Rating from "./components/Popups/Rating/Rating";
 
 export default class App extends Component {
   render() {
@@ -43,6 +45,9 @@ export default class App extends Component {
             <Route path="your-idea-lists" element={<YourIdeaLists/>}/>
             <Route path="your-friends" element={<YourFriends/>}/>
           </Route>
+          <Route path="popup1" element={<Modal />} />
+          <Route path="popup1" element={<Modal />} />
+          <Route path="rating" element={<Rating />}/>
         </Routes>
         <Footer />
       </>

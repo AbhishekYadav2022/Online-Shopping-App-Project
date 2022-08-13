@@ -4,15 +4,16 @@ import iphone from "./assets/iphone.jpg";
 import leftArrow from "./assets/leftArrow.svg";
 import rightArrow from "./assets/rightArrow.svg";
 import closeIcon from "./assets/closeIcon.svg";
-import star from "./assets/star.svg";
-import starFilled from "./assets/starFilled.svg";
+import Star from "./assets/Star";
+import StarFilled from "./assets/StarFilled";
+import StarPartial from "./assets/StarPartial";
 
 const Wrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   background-color: grey;
-  `;
+`;
 
 const Container = styled.div`
   width: 800px;
@@ -25,23 +26,23 @@ const Container = styled.div`
   display: flex;
   background-color: white;
   box-shadow: 0px 0px 20px black;
-  `;
+`;
 const PartOne = styled.div`
- display: flex;
- width: 400px;
- margin: 0px 10px;
-`
+  display: flex;
+  width: 400px;
+  margin: 0px 10px;
+`;
 const ArrowContainer = styled.div`
   /* border: 1px solid green; */
   width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 const Arrow = styled.img`
   /* border: 1px solid red; */
   width: 40px;
-`
+`;
 
 const ImageContainer = styled.div`
   border-radius: 8px;
@@ -78,9 +79,9 @@ const RatingContainer = styled.div`
   display: flex;
   margin: 8px 0px;
 `;
-const StarIcon = styled.img`
-  width: 15px;
-  margin: 2px;
+const StarIcon = styled.div`
+  width: 13px;
+  margin: 0px 6px;
 `;
 const PriceContainer = styled.div``;
 const Price = styled.span`
@@ -94,7 +95,7 @@ const AdditionalInfo = styled.span`
 `;
 const ButtonsCon = styled.div`
   margin-top: 10px;
-`
+`;
 const Button = styled.div`
   font-size: 0.82rem;
   font-weight: 500;
@@ -107,24 +108,24 @@ const Button = styled.div`
   background-color: #ffc600;
   border-radius: 20px;
   box-shadow: 0px 10px 10px grey;
-`
+`;
 const AddToCart = styled(Button)`
   border-color: white;
-`
+`;
 const SeeProDetails = styled(Button)`
   border-radius: 13px;
   background: none;
   box-shadow: 0px 0px 10px grey;
-`
+`;
 const CloseIconContainer = styled.div`
   width: 80px;
-  `
+`;
 const CloseIcon = styled.img`
-  width: 40px;
+  width: 35px;
   padding: 10px;
   border: 2px solid grey;
-  margin: 10px 20px; 
-`
+  margin: 10px 20px;
+`;
 
 function Modal(props) {
   const { children } = props;
@@ -133,7 +134,7 @@ function Modal(props) {
       <Container>
         <PartOne>
           <ArrowContainer>
-            <Arrow src={leftArrow}/>
+            <Arrow src={leftArrow} />
           </ArrowContainer>
           <ImageContainer>
             <Image src={iphone} />
@@ -149,23 +150,23 @@ function Modal(props) {
             Startups, Corporate Career and Life
           </Name>
           <RatingContainer>
-            <StarIcon src={starFilled}/>
-            <StarIcon src={starFilled}/>
-            <StarIcon src={starFilled}/>
-            <StarIcon src={starFilled}/>
-            <StarIcon src={star}/>
+            <StarIcon><Star/></StarIcon>
+            <StarIcon><Star/></StarIcon>
+            <StarIcon><Star/></StarIcon>
+            <StarIcon><StarPartial/></StarIcon>
+            <StarIcon><StarFilled/></StarIcon>
           </RatingContainer>
           <PriceContainer>
             <Price>$156</Price>
             <AdditionalInfo>FREE Delivery on first order</AdditionalInfo>
           </PriceContainer>
           <ButtonsCon>
-              <AddToCart>Add to Cart</AddToCart>
-              <SeeProDetails>See product details</SeeProDetails>
+            <AddToCart>Add to Cart</AddToCart>
+            <SeeProDetails>See product details</SeeProDetails>
           </ButtonsCon>
         </DescConatainer>
         <CloseIconContainer>
-          <CloseIcon src={closeIcon}/>
+          <CloseIcon src={closeIcon} />
         </CloseIconContainer>
       </Container>
     </Wrapper>
