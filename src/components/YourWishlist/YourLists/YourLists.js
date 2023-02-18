@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import shareIcon from "./assets/share.svg";
 import moreIcon from "./assets/threedot2.png";

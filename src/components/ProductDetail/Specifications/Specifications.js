@@ -43,7 +43,7 @@ class Specifications extends Component {
           </li>
         </List>
         <Info>
-          <a>Manufacturing, Packaging and Import Info</a>
+          <a href="#">Manufacturing, Packaging and Import Info</a>
         </Info>
       </Specification>
     );

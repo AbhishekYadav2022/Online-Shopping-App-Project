@@ -3,7 +3,7 @@ import "./ProductDetail.css";
 import productImage from "../../images/iphone.jpg";
 import info from "../../images/info.svg";
 import Specifications from "./Specifications/Specifications";
-import FrequentlyBoughtTogether from "./FrequentlyBoughtTogether/FrequentlyBoughtTogether";
+// import FrequentlyBoughtTogether from "./FrequentlyBoughtTogether/FrequentlyBoughtTogether";
 import RatingsAndReviews from "./RatingsAndReviews/RatingsAndReviews";
 import starIcon from '../../images/starIcon.png'
 import Cart from '../../images/cart.svg'
@@ -19,7 +19,7 @@ class ProductDetail extends Component {
       <div className="productDetail">
         <div className="product">
           <div className="productImage">
-            <img src={productImage}></img>
+            <img src={productImage} alt="image"></img>
             <div className="productBtns">
               <button className="addToCart"><span><CartIcon src={Cart}/></span>Add to cart</button>
               <button className="buyNow">Buy now</button>
@@ -31,13 +31,13 @@ class ProductDetail extends Component {
               Joseph)
             </h2>
             <p className="productRatingAndReview">
-              <span className="productRating">4.5 <img className="starIcon" src={starIcon}></img></span> 48,976 Ratings &
+              <span className="productRating">4.5 <img className="starIcon" src={starIcon} alt="image"></img></span> 48,976 Ratings &
               4,433 Reviews
             </p>
             <p className="productPrice">
               <span className="newPrice">₹117</span>{" "}
               <span className="oldPrice">₹199</span>{" "}
-              <span className="off">41% off</span> <img src={info}></img>
+              <span className="off">41% off</span> <img src={info} alt="image"></img>
             </p>
             <h4 className="offersHeading">Avaliable offers</h4>
             <ul className="offers">

@@ -22,7 +22,7 @@ const Desc = styled.p`
 
 export default class Orders extends Component {
   render() {
-    if (orders == true) return <div>Orders</div>;
+    if (orders === true) return <div>Orders</div>;
     else
       return (
         <Wrapper>

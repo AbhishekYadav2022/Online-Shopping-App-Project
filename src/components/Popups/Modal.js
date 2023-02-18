@@ -128,7 +128,7 @@ const CloseIcon = styled.img`
 `;
 
 function Modal(props) {
-  const { children } = props;
+  // const { children } = props;
   return (
     <Wrapper>
       <Container>

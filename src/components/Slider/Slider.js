@@ -45,10 +45,10 @@ class Slider extends Component {
       <>
         <div className="slider_container">
           <div className="navigator">
-            <span className="navigator_span1" onClick={() => this.showPrevious()}><img src={leftArrow} /></span>
-            <span className="navigator_span2" onClick={() => this.showNext()}><img src={rightArrow} /></span>
+            <span className="navigator_span1" onClick={() => this.showPrevious()}><img src={leftArrow} alt="image"/></span>
+            <span className="navigator_span2" onClick={() => this.showNext()}><img src={rightArrow} alt="image"/></span>
           </div>
-          <img className="slider_img" src={imageList[this.state.imageListIndex]} />
+          <img className="slider_img" alt="image" src={imageList[this.state.imageListIndex]} />
         </div>
       </>
     );
