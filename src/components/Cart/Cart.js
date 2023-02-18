@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Image from "../../images/iphone.jpg";
-import Approved from "./approve.svg";
+// import Approved from "./approve.svg";
 import "./Cart.css";
 import SideBar from "./SideBar/SideBar";
 import YourItems from "./YourItems/YourItems";
