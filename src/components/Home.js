@@ -6,9 +6,9 @@ import Slider from './Slider/Slider'
 function Home() {
   return (
     <div>
-      <Slider/>
+      {/* <Slider/> */}
       <div className='body'>
-      <ItemContainer/>
+      {/* <ItemContainer/> */}
       </div>
     </div>
   )
