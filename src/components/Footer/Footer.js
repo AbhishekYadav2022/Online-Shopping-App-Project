@@ -12,6 +12,6 @@ const Container = styled.div`
 
 export default class Footer extends Component {
   render() {
-    return <Container>Footer</Container>;
+    return <Container></Container>;
   }
 }
