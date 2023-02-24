@@ -1,172 +1,127 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import searchIcon from "../../images/searchIcon.svg";
-import cartIcon from "../../images/cart.svg"
-
-const Container = styled.div`
-  padding: 8px;
-  background-color: #131921;
-  height: 60px;
-  color: white;
-  display: flex;
-  justify-content: space-evenly;
-  
-  //========== Making Responsive==========
-  @media (max-width: 900px) {
-    display: none;
-  }
-`;
-const LogoContainer = styled.div`
-  border: 2px solid white;
-  margin: 2px;
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const SearchBoxContainer = styled.div`
-  border-radius: 6px;
-  background-color: white;
-  border: 2px solid white;
-  border: none;
-  height: 40px;
-  margin: 2px;
-  display: flex;
-`;
-const Category = styled.div`
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  background-color: #f7f7f7;
-  border-right: 1px solid #d9d9d9;
-  height: 40px;
-  color: black;
-  text-align: center;
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #4e4e4e;
-`;
-const SearchBox = styled.input`
-  background-color: white;
-  border: none;
-  height: 40px;
-  width: 425px;
-`;
-const SearchIconContainer = styled.div`
-  background-color: #febd69;
-  height: 40px;
-  width: 45px;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const SearchIcon = styled.img`
-  height: 25px;
-`;
-const Country = styled.div`
-  border: 1px solid red;
-  padding-bottom: -10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const Links = styled.div`
-  /* border: 2px solid white; */
-  display: flex;
-  flex-direction: column;
-  margin: 2px;
-`;
-const CartContainer = styled.div`
-  display: flex;
-  /* border: 2px solid white; */
-`;
-const CartText = styled.div`
-  /* border: 1px solid white; */
-  font-family: "arial";
-  height: fit-content;
-  font-size: 1.1rem;
-  font-weight: 700;
-  /* border: 1px solid white; */
-  margin-top: 17px;
-`;
-const Span = styled.span`
-  font-family: "arial";
-  font-size: 0.7rem;
-  height: fit-content;
-  margin-top: 3px;
-  margin-bottom: -4px;
-`;
-const Span2 = styled.span`
-  font-family: "arial";
-  height: fit-content;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-top: 0px;
-`;
-const Cart = styled.div`
-  display: flex;
-  
-`
-const NumberOfProducts = styled.div`
-  width: 40px;
-  margin: 6px;
-  margin-left: 7px;
-  font-weight: 700;
-  color: orange;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-
-`;
-const CartIcon = styled.img`
-`;
-
-
+import "./NavbarResponsive.css";
+import logo from "../../images/logo.png";
+import SearchIcon from "@mui/icons-material/Search";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FlagCircleIcon from "@mui/icons-material/FlagCircle";
+import RoomIcon from "@mui/icons-material/Room";
+import MenuIcon from "@mui/icons-material/Menu";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import PersonIcon from "@mui/icons-material/Person";
 
 function Navbar() {
   return (
-    <Container>
-      <LogoContainer>
-        <Link className="logoContainer" to="/">
-          Logo
-        </Link>
-      </LogoContainer>
-      <Links>
-        <Span>Hello</Span>
-        <Span2>Select your address</Span2>
-      </Links>
-      <SearchBoxContainer>
-        <Category>All</Category>
-        <SearchBox />
-        <SearchIconContainer>
-          <SearchIcon src={searchIcon} />
-        </SearchIconContainer>
-      </SearchBoxContainer>
-      <Country>Country</Country>
-      <Links>
-        <Span>Hello, Abhishek</Span>
-        <Span2 >Account & Lists</Span2>
-      </Links>
-      <Links>
-        <Span>Returns</Span>
-        <Span2>& Orders</Span2>
-      </Links>
-      <CartContainer>
-        <Cart>
-          <NumberOfProducts>2</NumberOfProducts>
-          <CartIcon src={cartIcon}/>
-        </Cart>
-        <CartText>Cart</CartText>
-      </CartContainer>
-    </Container>
+    <div className="nav-container">
+      <div className="nav-top">
+        <div className="nav-top-left">
+          <span className="nav-top-child">
+            <MenuIcon />
+          </span>
+          <span className="nav-top-child">
+            <img className="nav-top-logo" src={logo} />
+          </span>
+        </div>
+        <div className="nav-top-right">
+          <span className="nav-top-child">
+            <span className="nav-sign-in-text">Sign In</span>
+            <KeyboardArrowRightIcon />
+            <PersonOutlineIcon />
+          </span>
+          <span className="nav-top-child">
+            <ShoppingCartIcon />
+          </span>
+        </div>
+      </div>
+      <div className="nav-left">
+        <a href="/" className="nav-logo-container nav-box-container">
+          <img className="logo" src={logo}></img>
+        </a>
+        <a href="/" className="nav-place-container nav-box-container">
+          <div className="nav-place-icon">
+            <RoomIcon style={{ color: "white" }} />
+          </div>
+          <div className="nav-place-name">
+            <span className="nav-text nav-small-text">Deliver to</span>
+            <span className="nav-address nav-bold-text">Jaunpur 230306</span>
+          </div>
+        </a>
+      </div>
+      <div className="nav-middle">
+        <div className="nav-search-box-container">
+          <div className="nav-search-left nav-search-child">
+            All
+            <ArrowDropDownIcon />
+          </div>
+          <div className="nav-search-form-container">
+            <input
+              className="nav-search-box nav-search-child"
+              placeholder="Search Amazon.in"
+            />
+          </div>
+          <div className="nav-search-right nav-search-child">
+            <SearchIcon sx={{ fontSize: 30 }} className="nav-search-icon" />
+          </div>
+        </div>
+      </div>
+      <div className="nav-right">
+        <div className="nav-right-boxes nav-box-container nav-dropdown">
+          <a
+            href="/"
+            className="nav-right-country-lang-container nav-dropdown-btn"
+          >
+            {/* <span className="nav-right-country-flag"></span> */}
+            <FlagCircleIcon style={{ color: "green" }} />
+            <span className="nav-right-lang">EN</span>
+            <ArrowDropDownIcon style={{ color: "white" }} />
+          </a>
+          <div className="nav-lang-dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <div className="nav-right-boxes nav-box-container nav-dropdown">
+          <a
+            href="#"
+            class=".nav-dropdown-btn"
+            style={{ display: "flex", flexDirection: "column" }}
+          >
+            <span className="nav-hello-text nav-small-text">
+              Hello, Abhishek
+            </span>
+            <span className="nav-right-account nav-bold-text">
+              Account & Lists
+              <ArrowDropDownIcon style={{ color: "white" }} />
+            </span>
+          </a>
+          <div className="nav-lang-dropdown-content nav-account-dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <a href="#" className="nav-right-boxes nav-box-container">
+          <span className="nav-returns-text nav-small-text">Returns</span>
+          <span className="nav-right-orders-container">
+            <span className="nav-right-orders nav-bold-text">& Orders</span>
+            <span className="nav-right-dropdown"></span>
+          </span>
+        </a>
+        <a href="#" className="nav-right-boxes nav-box-container cart-box">
+          <span className="nav-cart">
+            <ShoppingCartIcon
+              style={{ color: "white" }}
+              sx={{ fontSize: 37 }}
+            />
+            <span className="cart-item-count">2</span>
+          </span>
+          <span className="nav-cart-text nav-bold-text">Cart</span>
+        </a>
+      </div>
+    </div>
   );
 }
 
