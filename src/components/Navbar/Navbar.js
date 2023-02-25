@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import "./NavbarResponsive.css";
 import "./SideBar.css";
+import "./BottomSheet.css";
 import logo from "../../images/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -11,11 +12,13 @@ import RoomIcon from "@mui/icons-material/Room";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import CloseIcon from "@mui/icons-material/Close";
+import SideBar from "./SideBar";
+import BottomSheet from "./BottomSheet";
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [botSheetOpen, setBotSheetOpen] = useState(false);
 
   return (
     <div className="nav-container">
@@ -51,53 +54,7 @@ function Navbar() {
           </span>
         </div>
         <div className={`menu-nav${navbarOpen ? " show-menu" : ""}`}>
-          <ul className="hmenu-ul">
-            <li>
-              <div id="hmenu-header">
-                <div id="hmenu-header-top">
-                  <span>Sign In</span>
-                  <PersonOutlineIcon style={{ color: "white", fontSize: 32 }} />
-                </div>
-                <div id="hmenu-header-bottom">
-                  <a href="#" id="hmenu-header-title">
-                    <div id="hmenu-header-title-line1">Browse</div>
-                    <div id="hmenu-header-title-line2">Amazon</div>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a href="#" id="hmenu-home-link">
-                <div id="hmenu-home-container">
-                  <div id="hmenu-home-left">
-                    <div id="hmenu-home-text">Amazon Home</div>
-                  </div>
-                  <div id="hmenu-home-right">
-                    <HomeOutlinedIcon style={{ fontSize: 32 }} />
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li className="hmenu-separator"></li>
-            <li className="hmenu-item hmenu-title">Trending</li>
-            <li className="hmenu-item">Best Sellers</li>
-            <li className="hmenu-item">New Releases</li>
-            <li className="hmenu-item">Movers and Shakers</li>
-            <li className="hmenu-separator"></li>
-            <li className="hmenu-item hmenu-title">top categories for you</li>
-            <li className="hmenu-item">Mobiles</li>
-            <li className="hmenu-item">Computers</li>
-            <li className="hmenu-item">Books</li>
-            <li className="hmenu-item">Amazon Fashion</li>
-            <li className="hmenu-item">See All Categories</li>
-            <li className="hmenu-separator"></li>
-            <li className="hmenu-item hmenu-title">Programs & Features</li>
-            <li className="hmenu-item">Today's Deals</li>
-            <li className="hmenu-item">Amazon Pay</li>
-            <li className="hmenu-item">Try Prime</li>
-            <li className="hmenu-item">Sell on Amazon</li>
-            <li className="hmenu-item">Style Feed</li>
-          </ul>
+          <SideBar />
         </div>
       </div>
       <div className="nav-left">
@@ -187,12 +144,24 @@ function Navbar() {
         </a>
       </div>
       <div className="nav-bottom">
-        <div className="nav-bottom-location">
+        <div
+          className="nav-bottom-location"
+          onClick={() => setBotSheetOpen((prev) => !prev)}
+        >
           <nav className="nav-bottom-location-container">
             <RoomIcon style={{ fontSize: 20 }} />
             <span className="nav-bottom-location-text">Deliver to</span>
             <span className="nav-bottom-location">Jaunpur 230306</span>
           </nav>
+        </div>
+      </div>
+      <div className="bottom-sheet">
+        <div
+          className={`screen-overlay${botSheetOpen ? " show" : ""}`}
+          onClick={() => setBotSheetOpen(false)}
+        ></div>
+        <div className={`bottom-sheet-container${botSheetOpen ? " show": ""}`}>
+          <BottomSheet />
         </div>
       </div>
     </div>
